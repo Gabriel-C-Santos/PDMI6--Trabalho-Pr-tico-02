@@ -1,0 +1,38 @@
+﻿<!-- Gabriel Coutinho dos Santos e Leonardo Pinto Teixeira-->
+    
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.MainPage"
+             Title="Lista de Tarefas">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adicionar" Clicked="OnAddTaskClicked" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <CollectionView x:Name="TasksCollectionView"
+                        SelectionMode="Single"
+                        SelectionChanged="OnTaskSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Title}" 
+                               FontSize="20" 
+                               FontAttributes="Bold" />
+                        <Label Text="{Binding Description}" 
+                               FontSize="14" 
+                               TextColor="Gray" />
+                        <!-- Exibe a data de entrega da tarefa -->
+                        <Label Text="{Binding DueDate, StringFormat='Data de Entrega: {0:dd/MM/yyyy}'}" 
+                               FontSize="14" 
+                               TextColor="Gray" />
+                        <!-- Exibe a prioridade da tarefa -->
+                        <Label Text="{Binding Priority, StringFormat='Prioridade: {0}'}" 
+                               FontSize="14" 
+                               TextColor="Gray" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,23 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.TaskDetailsPage"
+             Title="Detalhes da Tarefa">
+    <StackLayout Padding="10">
+        <Label Text="Título" FontSize="20" FontAttributes="Bold" />
+        <Label Text="{Binding SelectedTask.Title}" FontSize="18" />
+
+        <Label Text="Descrição" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+        <Label Text="{Binding SelectedTask.Description}" FontSize="16" />
+
+        <Label Text="Data de Criação" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+        <Label Text="{Binding SelectedTask.CreatedDate, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" />
+
+        <Label Text="Prioridade" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+        <Label Text="{Binding SelectedTask.Priority}" FontSize="16" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+            <Button Text="Editar" Clicked="OnEditClicked" />
+            <Button Text="Excluir" Clicked="OnDeleteClicked" BackgroundColor="Red" TextColor="White" Margin="10,0,0,0"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

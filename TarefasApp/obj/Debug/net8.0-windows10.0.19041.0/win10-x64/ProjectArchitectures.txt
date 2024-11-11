@@ -1,0 +1,1 @@
+C:\Users\Pc Gamer\source\repos\TarefasApp\TarefasApp\TarefasApp.csproj;x64

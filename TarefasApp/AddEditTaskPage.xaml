@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.AddEditTaskPage"
+             Title="Nova Tarefa">
+
+    <StackLayout Padding="20" Spacing="10">
+        <Label Text="Título da Tarefa" FontSize="Medium" />
+        <Entry x:Name="TitleEntry" Placeholder="Digite o título da tarefa" />
+
+        <Label Text="Descrição da Tarefa" FontSize="Medium" />
+        <Editor x:Name="DescriptionEditor" Placeholder="Digite a descrição da tarefa" HeightRequest="100" />
+
+        <Label Text="Data da Tarefa" FontSize="Medium" />
+        <DatePicker x:Name="TaskDatePicker" />
+
+        <Label Text="Prioridade da Tarefa" FontSize="Medium" />
+        <Picker x:Name="PriorityPicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baixa</x:String>
+                    <x:String>Média</x:String>
+                    <x:String>Alta</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button x:Name="SaveButton" Text="Adicionar" Clicked="OnSaveButtonClicked" />
+        <Button x:Name="DeleteButton" Text="Excluir" Clicked="OnDeleteButtonClicked" IsVisible="False" />
+    </StackLayout>
+</ContentPage>
